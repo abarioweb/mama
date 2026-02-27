@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Ajoke ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Georgia', serif;
+    color: #4b2e2e;
+    text-align: center;
+    overflow-x: hidden;
+    background-color: #fff5f8;
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+    height: 100vh;
+    background: url(mama\ pic\ 4.jpeg) no-repeat center center/cover;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.hero h1 {
+    font-size: 3.8em;
+    margin: 0;
+}
+
+.hero p {
+    font-size: 1.3em;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== FLOATING HEARTS ===== */
+.heart {
+    position: fixed;
+    bottom: -10px;
+    font-size: 20px;
+    color: #ff4d88;
+    animation: floatUp 6s linear infinite;
+}
+
+@keyframes floatUp {
+    to {
+        transform: translateY(-100vh);
+        opacity: 0;
+    }
+}
+
+/* ===== SECTIONS ===== */
+.section {
+    padding: 70px 20px;
+    max-width: 900px;
+    margin: auto;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.letter {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    text-align: left;
+    line-height: 1.8;
+}
+
+/* ===== BUTTONS ===== */
+button {
+    padding: 14px 30px;
+    font-size: 1em;
+    background: #ff4d88;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #e6005c;
+    transform: scale(1.05);
+}
+
+.reason-box {
+    margin-top: 25px;
+    font-style: italic;
+    font-size: 1.3em;
+    color: #b30059;
+}
+
+/* ===== GALLERY ===== */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.gallery img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 20px;
+    transition: 0.4s;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.gallery img:hover {
+    transform: scale(1.07);
+    box-shadow: 0 10px 25px rgba(255,77,136,0.5);
+}
+
+/* ===== SECRET MESSAGE ===== */
+.hidden {
+    display: none;
+    margin-top: 25px;
+    font-size: 1.4em;
+    color: #e60073;
+    font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>Ajoke ❤️</h1>
+        <p>This entire page exists because I love you.</p>
+    </div>
+</section>
+
+<!-- LETTER -->
+<section class="section">
+    <h2>My Letter to You</h2>
+    <div class="letter">
+        <p>My beautiful Ajoke,</p>
+
+        <p>
+        I don’t think words will ever truly capture how much you mean to me.
+        You are not just my girlfriend — you are my happiness, my peace,
+        and the best part of every single day.
+        </p>
+
+        <p>
+        I love your smile. I love your voice.
+        I love the way you make everything feel lighter just by being there.
+        </p>
+
+        <p>
+        Before you, love was just a word I understood.
+        With you, love became something I feel deeply in my heart.
+        </p>
+
+        <p>
+        I promise to choose you every day.
+        I promise to support you, protect you, and grow with you.
+        I promise that this is only the beginning of our beautiful story.
+        </p>
+
+        <p>Forever yours,<br> ❤️</p>
+    </div>
+</section>
+
+<!-- GALLERY -->
+<section class="section">
+    <h2>Why you are the Most beautiful girl i know 📸</h2>
+    <div class="gallery">
+        <img src="mama.jpeg" alt="Memory 1">
+        <img src="mama pic 1.jpeg" alt="Memory 2">
+        <img src="mama pic 2.jpeg" alt="Memory 3">
+        <img src="mama pic 3.jpeg" alt="Memory 4">
+    </div>
+</section>
+
+<!-- REASONS -->
+<section class="section">
+    <h2>Reasons I Love You 💖</h2>
+    <button onclick="showReason()">Click for a reason</button>
+    <div class="reason-box" id="reason"></div>
+</section>
+
+<!-- SECRET -->
+<section class="section">
+    <h2>Secret Message 🗝️</h2>
+    <button onclick="revealMessage()">Click if you're curious</button>
+    <div class="hidden" id="secret">
+        Ajoke, I am completely, hopelessly, endlessly in love with you.
+    </div>
+</section>
+
+<script>
+const reasons = [
+    "Your smile makes my heart melt.",
+    "You make me feel safe and understood.",
+    "You support me even when I doubt myself.",
+    "You are beautiful inside and out.",
+    "You make my life brighter just by existing.",
+    "You are my favorite person in the world."
+];
+
+function showReason() {
+    const randomIndex = Math.floor(Math.random() * reasons.length);
+    document.getElementById("reason").innerText = reasons[randomIndex];
+}
+
+function revealMessage() {
+    document.getElementById("secret").style.display = "block";
+}
+
+/* Floating hearts generator */
+setInterval(() => {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 6000);
+}, 800);
+</script>
+
+</body>
+</html>
